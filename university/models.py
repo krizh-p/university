@@ -25,4 +25,4 @@ class Enrollment(models.Model):
         return f"{self.student} enrolled in {self.course}"
     
     def isValidEnrollment(self):
-        return not (Enrollment.objects.filter(student=self.student, course=self.course).exists())
+        return (Enrollment.objects.filter(student=self.student, course=self.course).exists())
